@@ -13,6 +13,9 @@
 		44D5A54621EE933900D51B48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D5A54521EE933900D51B48 /* Assets.xcassets */; };
 		44D5A54921EE933900D51B48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D5A54721EE933900D51B48 /* LaunchScreen.storyboard */; };
 		44D5A55421EE933A00D51B48 /* PocketWardrobeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A55321EE933A00D51B48 /* PocketWardrobeTests.swift */; };
+		7D9322DF21F0216400874246 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9322DE21F0216400874246 /* Clothes.swift */; };
+		7D9322E121F023DA00874246 /* ClothesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9322E021F023DA00874246 /* ClothesTableViewCell.swift */; };
+		7D9322E321F027BC00874246 /* ClothesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9322E221F027BC00874246 /* ClothesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		44D5A54F21EE933A00D51B48 /* PocketWardrobeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketWardrobeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D5A55321EE933A00D51B48 /* PocketWardrobeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketWardrobeTests.swift; sourceTree = "<group>"; };
 		44D5A55521EE933A00D51B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9322DE21F0216400874246 /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		7D9322E021F023DA00874246 /* ClothesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesTableViewCell.swift; sourceTree = "<group>"; };
+		7D9322E221F027BC00874246 /* ClothesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				44D5A53E21EE933700D51B48 /* AppDelegate.swift */,
 				44D5A54021EE933700D51B48 /* ViewController.swift */,
 				44D5A54221EE933700D51B48 /* Main.storyboard */,
+				7D9322E221F027BC00874246 /* ClothesTableViewController.swift */,
+				7D9322DE21F0216400874246 /* Clothes.swift */,
+				7D9322E021F023DA00874246 /* ClothesTableViewCell.swift */,
 				44D5A54521EE933900D51B48 /* Assets.xcassets */,
 				44D5A54721EE933900D51B48 /* LaunchScreen.storyboard */,
 				44D5A54A21EE933900D51B48 /* Info.plist */,
@@ -197,8 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9322DF21F0216400874246 /* Clothes.swift in Sources */,
 				44D5A54121EE933700D51B48 /* ViewController.swift in Sources */,
+				7D9322E121F023DA00874246 /* ClothesTableViewCell.swift in Sources */,
 				44D5A53F21EE933700D51B48 /* AppDelegate.swift in Sources */,
+				7D9322E321F027BC00874246 /* ClothesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
