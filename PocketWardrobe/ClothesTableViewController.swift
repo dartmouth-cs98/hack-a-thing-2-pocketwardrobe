@@ -63,7 +63,7 @@ class ClothesTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ClothesTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate cloth for the data source layout.
         let cloth = clothes[indexPath.row]
         
         cell.nameLabel.text = cloth.name

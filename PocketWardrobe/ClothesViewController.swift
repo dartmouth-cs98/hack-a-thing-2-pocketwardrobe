@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import os.log
 
 class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -46,7 +49,28 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         dismiss(animated: true, completion: nil)
     }
     
-
+    //MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    
+    // This method lets you configure a view controller before it's presented.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        
+        // Set the clothes to be passed to ClothesTableViewController after the unwind segue.
+        cloth = Clothes(name: name, photo: photo)
+    }
+    
     //MARK: Actions
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
