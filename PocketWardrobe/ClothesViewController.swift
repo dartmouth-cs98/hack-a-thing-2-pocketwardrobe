@@ -36,7 +36,8 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -62,6 +63,11 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     }
     
     //MARK: Navigation
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // This method lets you configure a view controller before it's presented.
     
     // This method lets you configure a view controller before it's presented.
@@ -100,7 +106,8 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         super.viewDidLoad()
         nameTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        
+        // Enable the Save button only if the text field has a valid Meal name.
+        updateSaveButtonState()
     }
 
     //MARK: Private Methods
@@ -108,6 +115,7 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+        
     }
 }
 
