@@ -114,6 +114,7 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         nameTextField.delegate = self
         // Set up views if editing an existing Meal.
         if let clothes = clothes {
