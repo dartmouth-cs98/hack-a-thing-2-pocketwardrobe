@@ -14,14 +14,26 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var photoImageView: UIImageView!
-    
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
         return true
     }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
+    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var clothes: Clothes?
+    
+    
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -54,6 +66,7 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     // This method lets you configure a view controller before it's presented.
     
+    // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -67,8 +80,8 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
         
-        // Set the clothes to be passed to ClothesTableViewController after the unwind segue.
-        cloth = Clothes(name: name, photo: photo)
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        clothes = Clothes(name: name, photo: photo)
     }
     
     //MARK: Actions
@@ -90,6 +103,11 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
     }
 
-
+    //MARK: Private Methods
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
 }
 

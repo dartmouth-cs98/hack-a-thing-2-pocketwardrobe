@@ -13,6 +13,18 @@ class ClothesTableViewController: UITableViewController {
     //MARK: Properties
     var clothes = [Clothes]()
     
+    //MARK: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ClothesViewController, let cloth = sourceViewController.clothes {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: clothes.count, section: 0)
+            
+            clothes.append(cloth)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+
     //MARK: Private Methods
     private func loadSampleClothes() {
         let photo1 = UIImage(named: "cloth1")

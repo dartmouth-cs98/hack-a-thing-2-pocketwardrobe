@@ -58,7 +58,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Article" id="S3g-nr-YVe">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="o6c-2E-dgc"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wCO-yX-sZQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wCO-yX-sZQ">
+                            <connections>
+                                <segue destination="7Xx-yV-KvA" kind="unwind" unwindAction="unwindToMealListWithSender:" id="R7X-oo-wKb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="JVu-79-Mea" id="67B-bS-WY3"/>
@@ -67,6 +71,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="7Xx-yV-KvA" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="hti-Pm-pI2">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="XyQ-kV-iAz"/>

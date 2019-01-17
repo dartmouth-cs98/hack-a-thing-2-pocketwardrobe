@@ -10,18 +10,7 @@ import UIKit
 
 class ClothesTableViewCell: UITableViewCell {
 
-    //MARK: Actions
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? ClothesViewController, let cloth = sourceViewController.cloth {
-            
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: clothes.count, section: 0)
-            
-            clothes.append(cloth)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-        }
-    }
-
+    
 
     //MARK: Properties
     
