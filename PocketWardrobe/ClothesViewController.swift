@@ -105,6 +105,12 @@ class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
+        // Set up views if editing an existing Meal.
+        if let clothes = clothes {
+            navigationItem.title = clothes.name
+            nameTextField.text   = clothes.name
+            photoImageView.image = clothes.photo
+        }
         // Do any additional setup after loading the view, typically from a nib.
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()

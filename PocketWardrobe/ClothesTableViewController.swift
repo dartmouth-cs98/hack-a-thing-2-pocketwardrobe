@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class ClothesTableViewController: UITableViewController {
 
@@ -14,10 +15,22 @@ class ClothesTableViewController: UITableViewController {
     var clothes = [Clothes]()
     
     //MARK: Actions
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToClothesList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ClothesViewController, let cloth = sourceViewController.clothes {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing item.
+                clothes[selectedIndexPath.row] = cloth
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: clothes.count, section: 0)
+                
+                clothes.append(cloth)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
             
-            // Add a new meal.
+            // Add a new piece of clothes.
             let newIndexPath = IndexPath(row: clothes.count, section: 0)
             
             clothes.append(cloth)
@@ -120,14 +133,39 @@ class ClothesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "AddItem":
+            os_log("Adding a new piece of clothes.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let clothesDetailViewController = segue.destination as? ClothesViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedClothesCell = sender as? ClothesTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedClothesCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedClothes = clothes[indexPath.row]
+            clothesDetailViewController.clothes = selectedClothes
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
-    */
+    
 
 }
