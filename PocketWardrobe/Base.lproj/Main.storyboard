@@ -107,7 +107,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="ckM-m8-cU3" id="ltr-hH-Dbd"/>
+                                    <outlet property="nameLabel" destination="zsM-PA-YGs" id="BSZ-KF-6vL"/>
                                     <outlet property="photoImageView" destination="Zhu-lb-tgv" id="iYl-O6-gUU"/>
                                 </connections>
                             </tableViewCell>
