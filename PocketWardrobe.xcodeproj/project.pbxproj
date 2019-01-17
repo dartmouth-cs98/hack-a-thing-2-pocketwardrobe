@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44D5A53F21EE933700D51B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A53E21EE933700D51B48 /* AppDelegate.swift */; };
-		44D5A54121EE933700D51B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A54021EE933700D51B48 /* ViewController.swift */; };
+		44D5A54121EE933700D51B48 /* ClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A54021EE933700D51B48 /* ClothesViewController.swift */; };
 		44D5A54421EE933700D51B48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D5A54221EE933700D51B48 /* Main.storyboard */; };
 		44D5A54621EE933900D51B48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D5A54521EE933900D51B48 /* Assets.xcassets */; };
 		44D5A54921EE933900D51B48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D5A54721EE933900D51B48 /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		44D5A53B21EE933700D51B48 /* PocketWardrobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketWardrobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D5A53E21EE933700D51B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44D5A54021EE933700D51B48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44D5A54021EE933700D51B48 /* ClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesViewController.swift; sourceTree = "<group>"; };
 		44D5A54321EE933700D51B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44D5A54521EE933900D51B48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44D5A54821EE933900D51B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				44D5A53E21EE933700D51B48 /* AppDelegate.swift */,
-				44D5A54021EE933700D51B48 /* ViewController.swift */,
+				44D5A54021EE933700D51B48 /* ClothesViewController.swift */,
 				44D5A54221EE933700D51B48 /* Main.storyboard */,
 				7D9322E221F027BC00874246 /* ClothesTableViewController.swift */,
 				7D9322DE21F0216400874246 /* Clothes.swift */,
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9322DF21F0216400874246 /* Clothes.swift in Sources */,
-				44D5A54121EE933700D51B48 /* ViewController.swift in Sources */,
+				44D5A54121EE933700D51B48 /* ClothesViewController.swift in Sources */,
 				7D9322E121F023DA00874246 /* ClothesTableViewCell.swift in Sources */,
 				44D5A53F21EE933700D51B48 /* AppDelegate.swift in Sources */,
 				7D9322E321F027BC00874246 /* ClothesTableViewController.swift in Sources */,

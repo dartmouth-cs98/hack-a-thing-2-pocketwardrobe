@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ClothesViewController.swift
 //  PocketWardrobe
 //
 //  Created by Jane Lee on 1/15/19.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ClothesViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var clothesNameLabel: UILabel!
     
     @IBOutlet weak var photoImageView: UIImageView!
     //MARK: UITextFieldDelegate
@@ -22,7 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        clothesNameLabel.text = textField.text
+        
     }
     //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -57,9 +56,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        clothesNameLabel.text = "Default Text"
-    }
+//    @IBAction func setDefaultLabelText(_ sender: UIButton) {
+//        clothesNameLabel.text = "Default Text"
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
